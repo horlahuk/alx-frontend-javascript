@@ -1,3 +1,6 @@
-export default function getStudentsByLocation(getListStudents, city) {
-  return getListStudents.filter((student) => student.location === city);
+export default function getStudentsByLocation(students, city) {
+  if (Object.getPrototypeOf(students) === Array.prototype) {
+    return students.filter((items) => items.location === city);
+  }
+  return [];
 }
